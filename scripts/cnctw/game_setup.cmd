@@ -43,4 +43,4 @@ reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Command and Conquer 3 Kan
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Command and Conquer 3 Kanes Wrath" /v "UseLocalUserMaps" /t REG_DWORD /d "0" /f
 
 start "" "..\cnctw_maps.exe"
-"EA Multi Keygen.exe"
+start "" "..\keygen.exe"

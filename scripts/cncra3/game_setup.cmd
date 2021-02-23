@@ -29,3 +29,5 @@ reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Electronic Arts\Red Alert
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Electronic Arts\Red Alert 3\1.12" /v "Language" /t REG_DWORD /d "1" /f
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Electronic Arts\Red Alert 3\1.12" /v "LanguageName" /t REG_SZ /d "English (US)" /f
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\Electronic Arts\Electronic Arts\Red Alert 3\ergc" /ve /t REG_SZ /d "CDKEY" /f
+
+start "" "..\keygen.exe"
