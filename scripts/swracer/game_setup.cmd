@@ -15,13 +15,13 @@ regedit /s "directplay-win64.reg"
 
 SET regpath="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay"
 ::echo %locpath%
-REG ADD %regpath% /v "dwReserved1" /t REG_DWORD /d 50 /f /reg:32
-REG ADD %regpath% /v "dwReserved2" /t REG_DWORD /d 0 /f /reg:32
-REG ADD %regpath% /v "Guid" /t REG_SZ /d "{685BC400-9D2C-11cf-A9CD-00AA006886E3}" /f /reg:32
-REG ADD %regpath% /v "Path" /t REG_SZ /d "dpwsockx.dll" /f /reg:32
-REG ADD %regpath% /v "DescriptionA" /t REG_SZ /d "IPX Connection For DirectPlay" /f /reg:32
-REG ADD %regpath% /v "DescriptionW" /t REG_SZ /d "IPX Connection For DirectPlay" /f /reg:32
+reg add %regpath% /v "dwReserved1" /t REG_DWORD /d 50 /f /reg:32
+reg add %regpath% /v "dwReserved2" /t REG_DWORD /d 0 /f /reg:32
+reg add %regpath% /v "Guid" /t REG_SZ /d "{685BC400-9D2C-11cf-A9CD-00AA006886E3}" /f /reg:32
+reg add %regpath% /v "Path" /t REG_SZ /d "dpwsockx.dll" /f /reg:32
+reg add %regpath% /v "DescriptionA" /t REG_SZ /d "IPX Connection For DirectPlay" /f /reg:32
+reg add %regpath% /v "DescriptionW" /t REG_SZ /d "IPX Connection For DirectPlay" /f /reg:32
 
 SET regpath="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectPlay\Services\{5146ab8cb6b1ce11920c00aa006c4972}"
-REG ADD %regpath% /v "Description" /t REG_SZ /d "WinSock IPX Connection For DirectPlay" /f /reg:32
-REG ADD %regpath% /v "Path" /t REG_EXPAND_SZ /d dpwsockx.dll /f /reg:32
+reg add %regpath% /v "Description" /t REG_SZ /d "WinSock IPX Connection For DirectPlay" /f /reg:32
+reg add %regpath% /v "Path" /t REG_EXPAND_SZ /d dpwsockx.dll /f /reg:32

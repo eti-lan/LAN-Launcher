@@ -2,57 +2,38 @@ rem BF4 - Server
 @echo off 
 setlocal EnableDelayedExpansion
 cd /d "%~dp0"
+
+cls
+rmdir "server/Battlefield_3_Server" /s /q
+rmdir "server/Battlefield_4_Server" /s /q
+rmdir "server/BF3-EMU" /s /q
+rmdir "server/BF4-EMU" /s /q
+rmdir "server/BFBC2_PC_SERVER_R34" /s /q
+rmdir "server/BFBC2-EMU" /s /q
+rmdir "server/Client-Files" /s /q
+rmdir "server/DirectX - VC++ 2015, 2013, 2012, 2010" /s /q
+rmdir "server/procon_1.5.1.1" /s /q
+rmdir "server/Redirector" /s /q
 cls
 
-if exist "server" (
-    goto server_update_check
-) else (
-    goto server_setup
-)
+echo This Server version is out of date
+echo Server is Replace by a stand alone one "Battlefield Server"
+echo.	
+echo BF3/BF4 Please Backup Userdata via phpmyadmin
+echo http://localhost/phpmyadmin
+echo SQL user: root Password: root 
+echo SQL (bf4\users, bf3\player*)
+echo.
+echo.
+echo Starting webserver for backup
+cd server\Xampp
 
-
-exit
-
-@echo off 
-:mainmenu 
-cls
-cd server
-start "" "PortableBF.exe"
+start "" "xampp-control.exe"
+start "" "http://localhost/phpmyadmin"
+Pause
+goto exit
 
 :exit 
 exit
 
-:server_setup
-"server-setup.exe"
-timeout 5
-goto mainmenu
-exit
 
-
-:server_update_check
-if exist "server/update1.txt" (
-    goto mainmenu
-) else (
-    goto server_update
-)
-
-:server_update
-echo Update BF-Server #1
-echo.	
-echo All data will be removed. Please Backup Userdata via phpmyadmin
-echo SQL user: root Password: root 
-echo SQL (bf4\users, bf3\player*)
-echo Folder BFBC2-EMU\database
-echo.
-pause
-echo.
-echo Deleting old server files
-rmdir server /s /q
-echo.
-echo Starting server setup
-"server-setup.exe"
-timeout 5
-goto mainmenu
-exit
-
-exit

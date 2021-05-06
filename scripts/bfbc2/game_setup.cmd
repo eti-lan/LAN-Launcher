@@ -14,3 +14,7 @@ reg.exe add "HKLM\SOFTWARE\Wow6432Node\electronic arts\Battlefield Bad Company 2
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\electronic arts\Battlefield Bad Company 2\1.0" /v "Language" /t REG_DWORD /d "3" /f
 reg.exe add "HKLM\SOFTWARE\Wow6432Node\electronic arts\Battlefield Bad Company 2\1.0" /v "LanguageName" /t REG_SZ /d "German" /f
 
+reg.exe add "HKLM\SOFTWARE\Classes\bfbc2lan" /ve /t REG_SZ /d "URL:bfbc2lan Protocol" /f
+reg.exe add "HKLM\SOFTWARE\Classes\bfbc2lan" /v "URL Protocol" /t REG_SZ /d "" /f
+reg.exe add "HKLM\SOFTWARE\Classes\bfbc2lan\shell\open\command" /ve /t REG_SZ /d "%game_path%\\local\\BC2LAN.exe %%1" /f
+

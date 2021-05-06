@@ -1,3 +1,16 @@
+@echo off
+
+@echo off
+
+for /f "delims=" %%# in  ('"wmic path Win32_VideoController  get CurrentHorizontalResolution,CurrentVerticalResolution /format:value"') do (
+  set "%%#">nul
+)
+
+set w=%CurrentHorizontalResolution%
+set h=%CurrentVerticalResolution%
+
+cls
+
 set game_path=%1
 set game_id=%2
 set game_lang=%3
@@ -11,6 +24,7 @@ cd local
 copy /y "SmartSteamEmu.ini" "hl-cs16\SmartSteamEmu.ini"
 
 netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\hl-cs16\SmartSteamLoader.exe" profile=any enable=yes >nul
+netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\hl-cs16\hl.exe" profile=any enable=yes >nul
 netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\hl-cs15\hl.exe" profile=any enable=yes >nul
 
 :auswahl 
@@ -41,7 +55,7 @@ goto exit
 
 :CS15
 cd "hl-cs15"
-"hl.exe" -game cstrike
+"hl.exe" -dev -console -novideo -nojoy -noipx -game cstrike 
 goto exit 
 
 :HL
@@ -51,7 +65,7 @@ goto exit
 
 :HLPS
 cd "hl-cs15"
-"hl.exe"
+"hl.exe" -dev -console -novideo -nojoy -noipx
 goto exit
 
 

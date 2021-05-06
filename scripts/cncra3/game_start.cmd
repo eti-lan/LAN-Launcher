@@ -64,7 +64,7 @@ netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program
 if %modstart%==1 (
 echo.
 echo Loading, relax...
-"RA3.exe" -modconfig "%game_path%\local\GenEvo\GenEvo_B0.1.skudef"
+"RA3.exe" -modconfig "%game_path%\local\GenEvo\GenEvo_B0.2.skudef"
 ) else (
 echo.
 echo Loading, relax...

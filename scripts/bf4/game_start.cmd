@@ -8,8 +8,7 @@ cls
 setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 
-netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\bf4-fox\FirefoxPortable.exe" profile=any enable=yes >nul
-netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\Redirector.exe" profile=any enable=yes >nul
+netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\BF4LAN" profile=any enable=yes >nul
 netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\BF34Launcher.exe" profile=any enable=yes >nul
 netsh advfirewall firewall add rule name="%game_id%" dir=in action=allow program="%game_path%\local\bf4.exe" profile=any enable=yes >nul
 cls
@@ -34,15 +33,13 @@ echo Error!
 goto:auswahl  
 
 :start
-cd "local\BF4-Fox"
-"FirefoxPortable.exe" http://bf4-battlelog/
+start "" "http://bf4-battlelog/"
 exit
 
 
 :ip
-set /P IP=IP-Adresse (Bsp.: 192.168.178.1):
-cd "local\BF4-Fox"
-"FirefoxPortable.exe" http://%IP%/
+set /P IP=IP-Address (Exp.: 192.168.178.1):
+start "" "http://%IP%/"
 exit
 
 :exit
