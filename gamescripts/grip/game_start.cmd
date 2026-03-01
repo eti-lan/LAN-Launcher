@@ -6,6 +6,9 @@ set player=%4
 echo off
 cls
 setlocal EnableDelayedExpansion
+
+set OPENSSL_ia32cap=:~0x20000000
+
 cd /d "%~dp0"
 cd local
 
